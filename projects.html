@@ -1,0 +1,13 @@
+---
+title: Projects
+description: "Programming projects and technical write-ups."
+permalink: /projects/
+section: projects
+---
+{% assign projects = site.projects | sort: 'year' | reverse %}
+{% if projects.size > 0 %}
+  {% include project-list.html projects=projects %}
+{% else %}
+  <p class="empty-note">No project write-ups yet.</p>
+{% endif %}
+<p class="page-footnote"><a href="https://github.com/{{ site.github_username | escape }}?tab=repositories">View repositories on GitHub <span aria-hidden="true">↗</span></a>.</p>

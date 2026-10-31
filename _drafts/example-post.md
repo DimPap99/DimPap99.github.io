@@ -1,3 +1,9 @@
+---
+title: "Example post: code and formatting"
+description: "A private writing reference. Drafts are excluded from the live site."
+tags: [example]
+---
+
 ## Blog Post Title From First Header
 
 Due to a plugin called `jekyll-titles-from-headings` which is supported by GitHub Pages by default. The above header (in the markdown file) will be automatically used as the pages title.

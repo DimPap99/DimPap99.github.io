@@ -1,0 +1,15 @@
+intro: "I like programming and math. This is where I keep my projects, programming notes, and occasional research updates."
+role: "PhD Candidate"
+institution: "National and Kapodistrian University of Athens"
+interests:
+  - Machine Learning
+  - Graph Algorithms
+  - Optimization
+  - Edge/Cloud Systems
+education:
+  - degree: "PhD Candidate"
+    institution: "National and Kapodistrian University of Athens"
+  - degree: "MSc in Data Science & AI"
+    institution: "Eindhoven University of Technology"
+  - degree: "BSc in Informatics"
+    institution: "University of Piraeus"

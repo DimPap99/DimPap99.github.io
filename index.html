@@ -1,0 +1,47 @@
+---
+layout: default
+title: Home
+section: home
+---
+<section class="hero" aria-labelledby="intro-title">
+  <div class="hero-copy">
+    <p class="eyebrow">@{{ site.github_username | escape }}</p>
+    <h1 id="intro-title">{{ site.author | escape }}</h1>
+    <p class="hero-description">{{ site.data.profile.intro }}</p>
+    <div class="hero-actions">
+      <a class="button" href="{{ '/projects/' | relative_url }}">Projects <span aria-hidden="true">→</span></a>
+      <a class="text-link" href="{{ '/about/' | relative_url }}">About <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+  <aside class="profile-panel" aria-label="Position and research interests">
+    <h2>Current position</h2>
+    <p class="profile-role">{{ site.data.profile.role }}</p>
+    <p class="profile-institution">{{ site.data.profile.institution }}</p>
+    <h2>Research interests</h2>
+    <ul>{% for interest in site.data.profile.interests %}<li>{{ interest | escape }}</li>{% endfor %}</ul>
+  </aside>
+</section>
+<section class="home-section" aria-labelledby="latest-title">
+  <div class="section-heading">
+    <h2 id="latest-title">Latest notes</h2>
+    <a class="text-link" href="{{ '/notes/' | relative_url }}">All notes <span aria-hidden="true">→</span></a>
+  </div>
+  {% assign latest_posts = site.posts | slice: 0, 3 %}
+  {% if latest_posts.size > 0 %}
+    {% include note-list.html posts=latest_posts %}
+  {% else %}
+    <p class="empty-note">No notes published yet.</p>
+  {% endif %}
+</section>
+<section class="home-section" aria-labelledby="projects-title">
+  <div class="section-heading">
+    <h2 id="projects-title">Projects</h2>
+    <a class="text-link" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">→</span></a>
+  </div>
+  {% assign latest_projects = site.projects | sort: 'year' | reverse | slice: 0, 3 %}
+  {% if latest_projects.size > 0 %}
+    {% include project-list.html projects=latest_projects %}
+  {% else %}
+    <p class="empty-note">No project write-ups yet. <a href="https://github.com/{{ site.github_username | escape }}?tab=repositories">View repositories on GitHub</a>.</p>
+  {% endif %}
+</section>

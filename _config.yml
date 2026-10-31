@@ -1,42 +1,55 @@
-title: "DimPap99.dev"
-author: "DimPap99"
-#description: "A collection of project i have worked on." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+title: "dimpap / dev notes"
+author: "Dimitris Papadimitriou"
+description: "Projects, programming notes, and research by Dimitris Papadimitriou."
+url: "https://dimpap99.github.io"
+baseurl: ""
+lang: en
+timezone: Europe/Athens
+github_username: DimPap99
+email_display: "papadimitrioudimitris99 [at] gmail [dot] com"
 
-# Email / Social media user names used by the minima theme:
-# All of these are optional and can be removed or commented out
-email: "papadimitrioudimitris99[AT]gmail[dot]com"
-#twitter_username: "twitteruser"
-github_username: "DimPap99"
-#linkedin_username: "https://www.linkedin.com/in/dimitris-papadimitriou-012834164"
-#facebook_username: username
-#flickr_username: username
-#instagram_username: username
-#pinterest_username: username
-#youtube_username: username
-#googleplus_username: +username
-
-#########################################################################################
-######### Nothing below needs to be changed (unless you know what you're doing) #########
-#########################################################################################
-theme: "minima"
-
-rss: rss
-
+# A small, self-contained Jekyll site. No external theme or JavaScript required.
+markdown: kramdown
+highlighter: rouge
 kramdown:
-  syntax_highlighter_opts:
-    disable: true
-    
+  input: GFM
+  syntax_highlighter: rouge
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
 
-titles_from_headings:
-  strip_title: true
-  collections: true
-
+# Keep existing post URLs working; projects have their own permanent pages.
+permalink: /:categories/:year/:month/:day/:title.html
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
 defaults:
   - scope:
       path: ""
-      type: post
     values:
-      tags: Other
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      section: notes
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+      section: projects
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - scripts
+  - templates
+  - tests
+  - .bundle
+  - .jekyll-cache

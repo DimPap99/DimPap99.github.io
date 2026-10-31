@@ -1,0 +1,13 @@
+<div class="project-list">
+  {% for project in include.projects %}
+  <article class="project-row">
+    <span class="project-year">{{ project.year | default: '—' }}</span>
+    <div>
+      <h3><a href="{{ project.url | relative_url }}">{{ project.title | escape }} <span class="row-arrow" aria-hidden="true">↗</span></a></h3>
+      <p>{{ project.description | escape }}</p>
+      {% if project.stack.size > 0 %}<ul class="inline-tags" aria-label="Technologies">{% for technology in project.stack %}<li>{{ technology | escape }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+    {% if project.status and project.status != empty %}<span class="project-status">{{ project.status | escape }}</span>{% endif %}
+  </article>
+  {% endfor %}
+</div>

@@ -1,0 +1,31 @@
+---
+title: About
+description: "Dimitris Papadimitriou"
+permalink: /about/
+section: about
+---
+<div class="about-grid">
+  <div class="prose about-intro">
+    <p>{{ site.data.profile.intro }}</p>
+    <p>I’m a {{ site.data.profile.role }} at the {{ site.data.profile.institution }}.</p>
+  </div>
+  <aside class="about-aside">
+    <span class="eyebrow">Contact</span>
+    <a href="https://github.com/{{ site.github_username | escape }}">github.com/{{ site.github_username | escape }} <span aria-hidden="true">↗</span></a>
+    <span class="contact-email">{{ site.email_display | escape }}</span>
+  </aside>
+</div>
+<section class="about-section" id="research" aria-labelledby="research-title">
+  <h2 id="research-title">Research interests</h2>
+  <ul class="research-topics">
+    {% for interest in site.data.profile.interests %}<li>{{ interest | escape }}</li>{% endfor %}
+  </ul>
+</section>
+<section class="about-section" aria-labelledby="education-title">
+  <h2 id="education-title">Education</h2>
+  <ol class="education-list">
+    {% for qualification in site.data.profile.education %}
+    <li><span class="education-dot" aria-hidden="true"></span><div><h3>{{ qualification.degree | escape }}</h3><p>{{ qualification.institution | escape }}</p></div></li>
+    {% endfor %}
+  </ol>
+</section>

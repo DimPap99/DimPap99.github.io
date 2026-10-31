@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{% assign repo_url = page.repo_url | default: '' | strip %}
+{% assign demo_url = page.demo_url | default: '' | strip %}
+<article class="article">
+  <header class="article-header">
+    <a class="back-link" href="{{ '/projects/' | relative_url }}">← All projects</a>
+    <p class="eyebrow">Project{% if page.year %} / {{ page.year | escape }}{% endif %}</p>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description and page.description != empty %}<p class="article-description">{{ page.description | escape }}</p>{% endif %}
+    {% if page.stack.size > 0 %}<ul class="tags" aria-label="Technologies">{% for technology in page.stack %}<li>{{ technology | escape }}</li>{% endfor %}</ul>{% endif %}
+    {% if repo_url != empty or demo_url != empty %}
+    <div class="project-links">
+      {% if repo_url != empty %}<a class="button" href="{{ repo_url | escape }}">View source <span aria-hidden="true">↗</span></a>{% endif %}
+      {% if demo_url != empty %}<a class="text-link" href="{{ demo_url | escape }}">Live demo <span aria-hidden="true">↗</span></a>{% endif %}
+    </div>
+    {% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+</article>
