@@ -4,6 +4,8 @@ description: How this personal desktop application handles Google Drive data.
 eyebrow: Personal application
 permalink: /personal-drive/privacy/
 prose: true
+sitemap: false
+noindex: true
 ---
 
 Effective date: October 31, 2026.

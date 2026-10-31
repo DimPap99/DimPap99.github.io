@@ -3,6 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#141714">
   <meta name="color-scheme" content="dark">
+  {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
   {% seo %}
   {% feed_meta %}
   <link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">

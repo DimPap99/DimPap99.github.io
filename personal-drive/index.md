@@ -4,6 +4,8 @@ description: A personal desktop connection to Google Drive, using rclone.
 eyebrow: Personal application
 permalink: /personal-drive/
 prose: true
+sitemap: false
+noindex: true
 ---
 
 Personal Drive Mount is maintained by Dimitris Papadimitriou for use on his own
