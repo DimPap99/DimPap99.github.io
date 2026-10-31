@@ -14,7 +14,7 @@ bundle exec jekyll serve --drafts --unpublished
 ```
 
 Open <http://127.0.0.1:4000>. This preview includes drafts and hidden project
-write-ups. Those flags are for your local preview; the normal GitHub Pages build
+write-ups. Those flags are for your local preview. The normal GitHub Pages build
 does not publish them. Restart the server after changing `_config.yml`.
 
 For a preview of exactly what will go live:
@@ -42,7 +42,7 @@ python3 scripts/content.py publish what-i-learned-building-a-graph-tool
 The helper moves the draft into `_posts/YYYY-MM-DD-slug.md` using today's date.
 Use `--date 2026-10-31` to choose a publication date. It never pushes to GitHub
 or replaces an existing file. Future-dated posts stay hidden until a build runs
-on or after that date; GitHub Pages does not schedule a rebuild for you.
+on or after that date. GitHub Pages does not schedule a rebuild for you.
 
 ## Add a project
 
@@ -64,7 +64,7 @@ published: false
 ```
 
 The body is the write-up: the idea, how it works, what you learned. The fields
-above are examples; replace them with your actual project details. `year` is
+above are examples. Replace them with your actual project details. `year` is
 the year you built the project, and projects appear newest first. Empty source
 and demo links are automatically omitted. Set `published: true` when ready.
 
@@ -77,7 +77,7 @@ Keep images in `assets/images/<post-or-project-slug>/`. For example:
 ```
 
 Use descriptive alt text, reasonably sized images, and filenames without spaces.
-For code, link the GitHub repository; for large downloads, link a GitHub Release
+For code, link the GitHub repository. For large downloads, link a GitHub Release
 instead of adding build artifacts to this blog. PDFs can go in `assets/files/`
 and be linked with the same `relative_url` pattern.
 
@@ -93,7 +93,7 @@ git commit -m "Add a project write-up"
 git push origin main
 ```
 
-Review the file list before committing. Only add the source files; `_site/` is
+Review the file list before committing. Only add the source files. `_site/` is
 generated and ignored. If hosting needs configuring again, go to the repository's
 **Settings → Pages → Build and deployment**, choose **Deploy from a branch**,
 then **main** and **/(root)**. Build results appear in the **Actions** tab.

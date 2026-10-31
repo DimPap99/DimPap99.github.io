@@ -22,4 +22,4 @@ Weights can be painted manually or generated from uniform, Gaussian, exponential
 
 ## WebAssembly update
 
-We recently vibecoded a WebAssembly version using Pyodide so the demo could run on GitHub Pages. The existing Python algorithms now run in a browser worker, and JavaScript handles the animations. The Flask version still works locally.
+I recently vibecoded a WebAssembly version using Pyodide so the demo could run on GitHub Pages. The existing Python algorithms now run in a browser worker, and JavaScript handles the animations. The Flask version still works locally.
