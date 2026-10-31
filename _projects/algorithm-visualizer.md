@@ -8,7 +8,7 @@ demo_url: "https://dimpap99.github.io/AlgorithmVisualizer/"
 published: true
 ---
 
-An algorithm visualizer I originally built for an algorithms course. It includes sorting animations and grid-based pathfinding.
+I originally built this in 2020 for an algorithms course, with a Flask backend and a vanilla JavaScript frontend. Python ran the algorithms on the server, and JavaScript animated the results.
 
 ## Sorting
 
@@ -20,6 +20,6 @@ Set start and end points, draw walls, and assign cell weights. The available alg
 
 Weights can be painted manually or generated from uniform, Gaussian, exponential, and Bernoulli distributions. Bellman–Ford supports negative weights and reports negative cycles.
 
-## Browser version
+## WebAssembly update
 
-The live demo runs the Python implementations in the browser through Pyodide. Computation runs in a Web Worker, and JavaScript animates the results. The original Flask version uses the same Python code and can still be run locally.
+We recently vibecoded a WebAssembly version using Pyodide so the demo could run on GitHub Pages. The existing Python algorithms now run in a browser worker, and JavaScript handles the animations. The Flask version still works locally.
